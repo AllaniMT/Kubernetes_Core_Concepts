@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod #kind of what we want to deploy (In my Case is "Pod")
+metadata: # metadata contain all data of the  pod
+  name: my-first-pod-name
+  labels:
+    app: my-application-name
+    type: backend
+spec:
+  containers: #Defintion of the container, that we want to make it in pod
+    - name: my-container-name-nginx
+      image: nginx
