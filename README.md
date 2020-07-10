@@ -24,7 +24,7 @@
 
 ###### Scalling up/down the number of pods
 
-- Imperative way: ````kubectl scale --replicas=6 replicaset my-replicaset-name ``` . (Here i make the   number of pods in the replicasets from 4 to 6)
+- Imperative way: ``` kubectl scale --replicas=6 replicaset my-replicaset-name ``` . (Here i make the   number of pods in the replicasets from 4 to 6)
 - Declarative way: 
     * Chnage the number of pods in the yaml file
     * And run, ``` kubectl replace -f def-replicaset.yml ``` .
