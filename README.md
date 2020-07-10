@@ -12,7 +12,7 @@
 - To show more info about the pod, run ``` kubectl logs my-first-pod-name``` .
 - To delete the pod, run ````kubectl delete pods my-first-pod-name ``` .
 - To specify a port (and listen to it) for a certain pod, run ``` kubectl port-forward pods/my-first-pod-name 8000 ``` .
-- To execute and  show the application, that i run in the pod, run ``` kubectl exec -it my-first-pod-name bash ```` .
+- To execute and  show the application, that i run in the pod, run ``` kubectl exec -it my-first-pod-name bash ``` .
 
 #### 2 - Def-ReplicaSet
 
