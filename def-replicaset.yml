@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet #kind of what we want to deploy (In my Case is "Pod")
+metadata:
+  name: my-replicaset-name
+spec:
+  template: #Template contain all information about the container(that we want to deploy)
+    metadata:
+      name: my-second-pods-name
+      labels:
+        app: my-application-name
+        type: backend
+    spec:
+      containers:
+        - name: container-name-yes
+          image: nginx
+  replicas: 4 #We want to make 4 Copy for the nginx container
+  selector:
+    matchLabels: #let the ReplicaSet know, that it is responsible for all Containers, that have the same labels(app: my-application-name, type: backend)
+      app: my-application-name
+      type: backend
