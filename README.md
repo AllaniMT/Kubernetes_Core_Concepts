@@ -17,4 +17,7 @@
 #### 2 - Def-ReplicaSet
 
 - To create a Replica from the yaml file, run ``` kubectl create -f def-pod.yml ``` .
-- The aim of Replicaset is to determine how many times the same pod repeats. If one fails, kubernetes creates another to ensure, that the number of pods remains the same.
+- The aim of Replicaset is to determine how many times the same pod repeats. If one fails, kubernetes creates another to ensure, that the number of pods remains the same. (In my case, i created the nginx container in 4 different pods)
+- To show, how much pods we have, run ``` kubectl get pods ``` .
+- to show the status of our ReplicaSet, run ``` kubectl get replicasets ``` .
+- We delete a pod with the command  ``` kubectl delete pods my-first-pod-name ```, to see how kubernetes create another pod, to ensure the number of pods remains the same.
