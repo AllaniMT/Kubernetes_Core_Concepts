@@ -29,3 +29,15 @@
     * Chnage the number of pods in the yaml file
     * And run, ``` kubectl replace -f def-replicaset.yml ``` .
   
+  #### 3 - Def-Deployments
+  
+- Deployment is used, when we have to upgrade (or downgrade) Containers without the system failing.(Rolling update => One at the time)
+- Deployment is the same like ReplicaSet, We need only to change the kind(wie write "Deployment" instead of ReplicaSet)
+- To create a new Deployment, run  ```` Kubectl create -f def-deployment.yml ``` .
+- To show, if the Deployment created, run ``` kubectl get deployments ```
+- To show, that a new replicaset was created, run ``` kubectl get rs ```  or ``` kubectl get replicasets ```
+- To show, if all the pods are running``` kubectl get po ``` or ``` kubectl get pods ```
+- To show more information about the deployment ``` kubectl describe deployments  my-deployment-name ```
+- To show that,we have only one revision, run  ``` kubectl rollout history deployment/my-deployment-name ``` 
+- To delete the deployment, run ``` kubectl delete deployments my-deployment-name ```
+- We create now new deployment but with record, ``` kubectl create -f def-deployment.yml ``` . After we run the command ``` kubectl rollout history deployment/my-deployment-name ``` , we see that the change-cause is no more empty. 
