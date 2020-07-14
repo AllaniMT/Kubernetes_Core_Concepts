@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: ReplicaSet #kind of what we want to deploy (In my Case is "Pod")
+kind: ReplicaSet #kind of what we want to deploy (In my Case is "ReplicaSet")
 metadata:
   name: my-replicaset-name
 spec:
