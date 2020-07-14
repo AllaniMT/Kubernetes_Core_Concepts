@@ -41,3 +41,8 @@
 - To show that,we have only one revision, run  ``` kubectl rollout history deployment/my-deployment-name ``` 
 - To delete the deployment, run ``` kubectl delete deployments my-deployment-name ```
 - We create now new deployment but with record, ``` kubectl create -f def-deployment.yml ``` . After we run the command ``` kubectl rollout history deployment/my-deployment-name ``` , we see that the change-cause is no more empty. 
+- To make sur, that our deployment running, ``` kubectl port-forward deployments/myapp-deploy 3000 ```, Enter in browser "localhost:3000" .
+- Now we can modify our container (In our case is: nginx) . And for sure we have to modify the container version in the yaml file.
+- To Apply the modification, run ``` kubectl apply -f def-deployment.yml ```
+- with the command ``` kubectl rollout history deployment/my-deployment-name ``` we can see that we have two version of deployment
+- If we didn't like the new version, we can undo it, with : ``` kubectl rollout undo deployment/my-deployment-name --to-revsion 1``` . And now we have the old version of our container.
