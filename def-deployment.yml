@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment-name
+spec:
+  template:
+    metadata:
+      name: my-second-pods-name
+      labels:
+        app: my-application-name
+        type: backend
+    spec:
+      containers:
+        - name: nginx-container-name
+          image: nginx
+  replicas: 4
+  selector:
+    matchLabels:
+      app: my-application-name
+      type: backend
